@@ -68,10 +68,9 @@ Assuming an OT path, $u_{t}^\text{target}(x|z)$ can ultimately be expressed as
 
 $$ u_{t}^{\text{target}}(x|z) = \left( \dot{\alpha}_t - \frac{\dot{\beta}_t}{\beta_t}\alpha_t \right)z + \frac{\dot{\beta}_t}{\beta_t}x $$ 
 
-Considering, $\dot{\alpha}_{t}=1$, $\dot{\beta}_{t}=-1$, and $x\sim p_{t}(x|z)=\alpha_{t}z+\beta_{t}\epsilon$, the corresponding loss can now be written as,
+Considering, $\dot{\alpha}_t=1$, $\dot{\beta}_t=-1$, and $x \sim p_t(x|z) = \alpha_t z + \beta_t \epsilon$, the corresponding loss can now be written as,
 
-$$ L_{\text{CFM}}(\theta)= E_{t\sim\text{Unif}, z\sim p_\text{data},\epsilon\sim\mathcal{N}(0,I_d)}\left[‖u_{t}^{\theta}(x)-(z-\epsilon)‖^{2}\right]
-$$
+$$ L_{\text{CFM}}(\theta)= E_{t\sim\text{Unif}, z\sim p_\text{data},\epsilon\sim\mathcal{N}(0,I_d)}\left[‖u_{t}^{\theta}(x)-(z-\epsilon)‖^{2}\right] $$
 
 The beauty and power of the above loss formula is that one can process mini-batches of data, sampling anywhere in $t\in[0,1]$ and update model parameters $\theta$ without having to simulate the probability flow ODE. Simulation is only needed during inference time.
 
